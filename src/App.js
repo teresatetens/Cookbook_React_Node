@@ -1,26 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect } from "react";
 import './App.css';
+import { client } from "./client";
+import Card from "./Card";
+import Header from "./Header";
+
+require('dotenv').config()
 
 function App() {
+ 
+  useEffect(() => {
+    client.getEntries().then((response) => {
+      console.log(response);
+    })
+    .catch(console.error)
+  },[]);
+
+ 
+
+    
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className="container">
+      <header>
+        <div className="wrapper">
+          <span>React and Contentful</span>
+          <Card/>
+          <Header />
+        </div>
       </header>
+      <main>
+
+      </main>
     </div>
-  );
-}
+    </div>
+    );
+  }
+
 
 export default App;
