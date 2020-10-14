@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { client } from "./client";
-import './Card.css';
+import {cardContainer} from './Card.css';
 
 
 function Card () {
@@ -13,14 +13,18 @@ function Card () {
       })
 
     return (
-      <div className="cardContainer">
+      <div className="cardContainer" >
       {recipes&& recipes.map((recipe,index)=>{
         return(
-        <div key={index} className="card">
-          <h3> {recipe.fields.title}</h3>
-          <img className="cardImage" src={recipe.fields.image.fields.file.url} alt={recipe.fields.description}/>
-          <p>{recipe.fields.description}</p>
-        </div>
+          <>
+          <div key={index} className="card">
+            <div >
+              <img alt={recipe.fields.image.fields.file.url} src={recipe.fields.image.fields.file.url}/>
+            </div>
+            <h3> {recipe.fields.title}</h3>
+            <p>{recipe.fields.description}</p>
+          </div>
+        </>
       )
     })
       
@@ -33,4 +37,4 @@ function Card () {
 
 export default Card;
 
-        
+        //style={{backgroundImage: "url("+recipe.fields.image.fields.file.url+")"}}
