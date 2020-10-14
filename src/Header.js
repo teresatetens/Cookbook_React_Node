@@ -7,7 +7,6 @@ function Header(){
 
     const [ header, setHeader ] = useState(null)
 
-
     useEffect(() => {
         client.getEntries({
             content_type: "header"
@@ -18,6 +17,7 @@ function Header(){
     },[])
     
     console.log(header);
+
 
     return(
         <div className="header">

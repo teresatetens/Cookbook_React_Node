@@ -27,6 +27,7 @@ function Card () {
     }
         
       </div>
+
     )
 } 
 

@@ -1,0 +1,36 @@
+.banner {
+    font-family: sans-serif;
+    width: 100vw;
+    height: 80%;
+    position: absolute;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;  
+
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end; 
+    text-align: right;
+   
+ }
+
+
+.banner h1 {
+    font-size: 2rem;
+    color: blanchedalmond;
+   
+}
+.bannerMessage {
+    width: 300 px;
+}
+
+.bannerDescription {
+    font-size:1.2 rem;
+    color: blanchedalmond;
+    padding-right: 100px;
+    width: 300px;
+    line-height: 30px;
+ 
+}

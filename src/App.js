@@ -5,7 +5,7 @@ import { client } from "./client";
 import Card from "./Card";
 
 import Header from "./Header";
-import "./App.css";
+import Banner from "./Banner";
 import Footer from "./Footer"
 
 require('dotenv').config()
@@ -13,7 +13,8 @@ require('dotenv').config()
 function App() {
  
   useEffect(() => {
-    client.getEntries({ content_type: "header"}).then((response) => {
+
+   client.getEntries({ content_type: "header"}).then((response) => {
     })
     .catch(console.error)
   },[]);
@@ -23,12 +24,13 @@ function App() {
   return (
         <div>
           <Header />
+          <Banner />
           <div className="container">
             The main section container
           </div>
           <Footer />
-        </div>);
-  
+        </div>);  
 }
+
 
 export default App;
