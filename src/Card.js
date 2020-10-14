@@ -16,7 +16,7 @@ function Card () {
       <div className="cardContainer" >
       {recipes&& recipes.map((recipe,index)=>{
         return(
-        <div key={index} style={{backgroundImage: "url("+recipe.fields.image.fields.file.url+")"}}>
+        <div className="card" key={index} style={{backgroundImage: "url("+recipe.fields.image.fields.file.url+")"}}>
           <h3> {recipe.fields.title}</h3>
           <p>{recipe.fields.description}</p>
         </div>
