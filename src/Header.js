@@ -1,14 +1,8 @@
-import React, { useEffect } from "react";
-import client from "./client"
+import React from "react";
+//import client from "./client"
 
 function Header() {
 
-    useEffect(() => {
-        client.getEntries({
-            content_type: "header"
-        })
-        .then((header) => console.log(header))
-    },[])
 
     return(
         <>

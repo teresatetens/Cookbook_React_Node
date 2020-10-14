@@ -1,21 +1,13 @@
-import React, { useEffect } from "react";
+import React from "react";
 import './App.css';
-import { client } from "./client";
+//import { client } from "./client";
 import Card from "./Card";
 import Header from "./Header";
 
 require('dotenv').config()
 
 function App() {
- 
-  useEffect(() => {
-    client.getEntries().then((response) => {
-      console.log(response);
-    })
-    .catch(console.error)
-  },[]);
 
- 
 
     
   return (
