@@ -3,6 +3,7 @@ import './App.css';
 import { client } from "./client";
 import Card from "./Card";
 import Header from "./Header";
+import Banner from "./Banner";
 
 require('dotenv').config()
 
@@ -10,7 +11,7 @@ function App() {
  
   useEffect(() => {
     client.getEntries().then((response) => {
-      console.log(response);
+      
     })
     .catch(console.error)
   },[]);
@@ -26,6 +27,7 @@ function App() {
           <span>React and Contentful</span>
           <Card/>
           <Header />
+          <Banner />
         </div>
       </header>
       <main>
