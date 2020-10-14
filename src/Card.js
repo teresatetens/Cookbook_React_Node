@@ -16,10 +16,15 @@ function Card () {
       <div className="cardContainer" >
       {recipes&& recipes.map((recipe,index)=>{
         return(
-        <div className="card" key={index} style={{backgroundImage: "url("+recipe.fields.image.fields.file.url+")"}}>
-          <h3> {recipe.fields.title}</h3>
-          <p>{recipe.fields.description}</p>
-        </div>
+          <>
+          <div key={index} className="card">
+            <div >
+              <img alt={recipe.fields.image.fields.file.url} src={recipe.fields.image.fields.file.url}/>
+            </div>
+            <h3> {recipe.fields.title}</h3>
+            <p>{recipe.fields.description}</p>
+          </div>
+        </>
       )
     })
       
@@ -31,4 +36,4 @@ function Card () {
 
 export default Card;
 
-        
+        //style={{backgroundImage: "url("+recipe.fields.image.fields.file.url+")"}}
