@@ -1,6 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import './App.css';
+
 import { client } from "./client";
+import Card from "./Card";
+
 import Header from "./Header";
 import "./App.css";
 import Footer from "./Footer"

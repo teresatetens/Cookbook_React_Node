@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import client from "./client"
 import "./App.css"
@@ -5,6 +6,7 @@ import "./App.css"
 function Header(){
 
     const [ header, setHeader ] = useState(null)
+
 
     useEffect(() => {
         client.getEntries({
@@ -16,6 +18,7 @@ function Header(){
     },[])
     
     console.log(header);
+
     return(
         <div className="header">
             {header && <img className="logo" src={header.fields.logo.fields.file.url} alt="logo" style={{ width: "40px"}}/>}
