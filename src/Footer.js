@@ -33,9 +33,13 @@ function Footer() {
             )
             
         })}
-        <div className="search-container">
+            <div className="copyright">
+            <p>Copyright © 2020 - Remy's Kitchen</p>
+            </div>
+            <div className="search-container">
                 <SearchBar/>
-                </div>
+            </div>
+            
         </div>
 
     )
