@@ -9,7 +9,7 @@ function Card () {
     useEffect(() => {
         client.getEntries({
           content_type: "recipes"
-        }).then((response) => {setRecipes(response.items);console.log(recipes)})
+        }).then((response) => {setRecipes(response.items)})
       })
 
     return (
@@ -17,7 +17,7 @@ function Card () {
       {recipes&& recipes.map((recipe,index)=>{
         return(
         <div key={index} className="card">
-          <h3> {recipe.fields.title}</h3>
+          <h3 className="cardTitel"> {recipe.fields.title}</h3>
           <img className="cardImage" src={recipe.fields.image.fields.file.url} alt={recipe.fields.description}/>
           <p>{recipe.fields.description}</p>
         </div>
