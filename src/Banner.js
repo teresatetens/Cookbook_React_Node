@@ -21,7 +21,7 @@ const Banner = ()=> {
       <>
         {banner && 
           <div className = "banner" style={{backgroundImage:`url(${banner.fields.image.fields.file.url})`}}>
-             <h1 classNam = "bannerMessage">{banner.fields.bannerMessage}</h1>
+             <h1 className = "bannerMessage">{banner.fields.bannerMessage}</h1>
              <p className = "bannerDescription">{banner.fields.description}</p>
         </div>
         }
