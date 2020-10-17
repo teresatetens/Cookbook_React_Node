@@ -1,36 +1,25 @@
 import React from "react";
 import './App.css';
-
+import {Switch, Route} from 'react-router-dom';
 import { client } from "./client";
-import Card from "./Card";
 
 import Header from "./Header";
 import Banner from "./Banner";
+import Card from "./Card";
 import Footer from "./Footer"
 
 require('dotenv').config()
 
 function App() {
- 
-  useEffect(() => {
-
-   client.getEntries({ content_type: "header"}).then((response) => {
-    })
-    .catch(console.error)
-  },[]);
-
-  
-
   return (
         <div>
           <Header />
           <Banner />
-          <div className="container">
-            The main section container
-          </div>
+          <Switch>           
+            <Route component ={Card} path='/:recipeName?' />
+          </Switch>          
           <Footer />
-        </div>);  
+        </div>
+        );  
 }
-
-
 export default App;
