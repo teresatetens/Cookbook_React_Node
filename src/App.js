@@ -1,10 +1,11 @@
 import React from "react";
+import { BrowserRouter as Router , Switch, Route } from "react-router-dom"
 import './App.css';
-import {Switch, Route} from 'react-router-dom';
 import { client } from "./client";
 
 import Header from "./Header";
 import Banner from "./Banner";
+import About from "./About";
 import Card from "./Card";
 import Footer from "./Footer"
 
@@ -12,14 +13,17 @@ require('dotenv').config()
 
 function App() {
   return (
+    <Router>
         <div>
           <Header />
           <Banner />
+            <About/>
           <Switch>           
             <Route component ={Card} path='/:recipeName?' />
-          </Switch>          
+          </Switch>  
           <Footer />
         </div>
+        </Router>
         );  
 }
 export default App;
