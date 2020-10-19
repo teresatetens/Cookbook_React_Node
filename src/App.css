@@ -68,10 +68,6 @@ body {
   list-style-type: none;
 }
 
-.container {
-  width: 100%;
-  min-height: 400px;
-}
 
 .search-container {
   width: 20%;

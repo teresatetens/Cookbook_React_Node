@@ -3,6 +3,7 @@ import { client } from "./client";
 import {cardContainer} from './Card.css';
 
 
+
 function Card () {
   const [recipes,setRecipes] = useState(null);
 
@@ -12,26 +13,22 @@ function Card () {
         }).then((response) => {setRecipes(response.items);console.log(recipes)})
       })
 
-    return (
-      <div className="cardContainer" >
-      {recipes&& recipes.map((recipe,index)=>{
-        return(
-          <>
+      return (
+        <div className="cardContainer">
+        {recipes&& recipes.map((recipe,index)=>{
+          return(
           <div key={index} className="card">
-            <div >
-              <img alt={recipe.fields.image.fields.file.url} src={recipe.fields.image.fields.file.url}/>
-            </div>
-            <h3> {recipe.fields.title}</h3>
+            <h3 className="cardTitel"> {recipe.fields.title}</h3>
+            <img className="cardImage" src={recipe.fields.image.fields.file.url} alt={recipe.fields.description}/>
             <p>{recipe.fields.description}</p>
           </div>
-        </>
-      )
-    })
+        )
+      })
       
     }
         
       </div>
-
+    
     )
 } 
 

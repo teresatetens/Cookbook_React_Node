@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import './App.css';
 
 import { client } from "./client";
@@ -25,9 +25,8 @@ function App() {
         <div>
           <Header />
           <Banner />
-          <div className="container">
-            The main section container
-          </div>
+          <Card/>
+          
           <Footer />
         </div>);  
 }
