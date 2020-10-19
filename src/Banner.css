@@ -1,3 +1,4 @@
+/* banner Style */
 .banner {
     font-family: sans-serif;
     width: 100%;
@@ -11,25 +12,23 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-end; 
-    text-align: right;
-   
- }
-
+    text-align: right;   
+}
 
 .banner h1 {
-    font-size: 2rem;
-    color: blanchedalmond;
-   
+  font-size: 2rem;
+  color: blanchedalmond; 
 }
+
 .bannerMessage {
-    width: 300 px;
+  width: 300 px;
 }
 
 .bannerDescription {
-    font-size:1.2 rem;
-    color: blanchedalmond;
-    padding-right: 100px;
-    width: 300px;
-    line-height: 30px;
- 
+  font-size:1.2 rem;
+  color: blanchedalmond;
+  padding-right: 100px;
+  width: 300px;
+  line-height: 30px;
+
 }

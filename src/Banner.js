@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { client } from "./client";
+import './App.css'
 import './Banner.css'
 
 
@@ -25,7 +26,6 @@ const Banner = ()=> {
              <p className = "bannerDescription">{banner.fields.description}</p>
         </div>
         }
-
       </>
     )
 } 
