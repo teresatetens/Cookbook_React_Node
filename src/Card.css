@@ -1,5 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400;1,700&family=Montserrat&family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&display=swap');
+
 .cardContainer{
     width: 100%;
+    display:flex;
+    width: 100%;   
+    top: 400px;
+    margin: 0.5em;
+}
+
+.cardContainerBig{
     display:flex;
     width: 100%;
     top: 400px;
@@ -9,8 +19,11 @@
 .cardImage {
     width: 100%;
     height: 40%;
-
     }
+    
+.cardImageBig {
+    width:100%
+}
 
 .card {
     width: calc(100%/4);
@@ -23,13 +36,47 @@
     margin: 0.5em;
     
 }
-
-p {
-    margin: 0.5em;
+.cardBig {
+    width: 100%;
+    margin:10px;
 }
+
+.cardTitel {
+    font-family: 'Sansita Swashed', cursive;
+    color: orangered;
+    opacity: 90%;
+    font-size: 0.8em;
+} 
 
 h3 {
     font-family: 'Sansita Swashed', cursive;
     color: orangered;
     opacity: 90%;
 }
+
+
+.cardTitleBig {
+    font-family: 'Sansita Swashed', cursive;
+    color: orangered;
+    opacity: 90%;
+    text-decoration: none;
+    font-size: 1.2em;  
+}
+
+.cardDesc, .cardDescBig, .ingredient {
+    font-family: 'Lato', sans-serif;
+}
+.cardDesc {
+    font-size: 0.7em;
+    margin: 0.5em;
+}
+
+.cardDescBig {
+    font-size: 1.0em;
+
+}
+
+.ingredient {
+    font-size: 0.9em;
+}
+
