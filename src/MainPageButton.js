@@ -1,15 +1,13 @@
 import React from "react";
-import { useHistory } from "react-router-dom"
+import { Link } from "react-router-dom";
 
-const MainPageButton = ({ history }) => {
-  // const history = useHistory()
-  const handleClick = () => {
-      history.push("/");
-  };
-  return (
-    <div className="backButton">
-      <button onClick={() => handleClick()}>Main</button>
-    </div>
+const MainPageButton = () => {
+  return (   
+      <div>
+        <Link to="/cards">
+          <button className="backButton">Main</button>
+        </Link>        
+      </div> 
   );
 };
 

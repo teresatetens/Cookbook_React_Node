@@ -1,6 +1,4 @@
-
 import React, { useEffect, useState } from "react";
-import client from "./client"
 import "./App.css"
 import { BrowserRouter as Router, NavLink } from "react-router-dom"
 
@@ -9,14 +7,11 @@ function Header(){
     const [ header, setHeader ] = useState(null)
 
     useEffect(() => {
-        client.getEntries({
-            content_type: "header"
-        })
-        .then((response) => { 
-          setHeader(response.items[0])})
-        .catch(console.error)
-    },[])
-    console.log(header);
+        fetch('http://localhost:7070/cards/')
+        .then((response) => response.json())
+        .catch(error=> console.error('Error:', error))
+        .then(response => console.log('Success:', JSON.stringify(response)))
+  },[])
 
     return (
         <Router>

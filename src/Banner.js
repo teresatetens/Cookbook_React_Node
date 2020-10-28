@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { client } from "./client";
+
 import './App.css'
 import './Banner.css'
 
@@ -8,15 +8,12 @@ const Banner = ()=> {
 
   const [banner, setBanner] = useState(null);
   
-    useEffect(() => {
-        client.getEntries({
-          content_type: "banner"
-        }).then((response) => {
-          console.log(response);
-          setBanner(response.items[0]);
-        })
-        .catch(console.error)
-      },[])
+  useEffect(() => {
+    fetch('http://localhost:7070/cards/')
+    .then((response) => response.json())
+    .catch(error=> console.error('Error:', error))
+    .then(response => console.log('Success:', JSON.stringify(response)))
+},[])
 
     return (
       <>

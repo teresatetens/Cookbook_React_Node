@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import client from "./client"
+
 import "./App.css"
 
 function About(props){  
@@ -7,12 +7,11 @@ function About(props){
     const [ about, setAbout ] = useState(null)
 
     useEffect(() => {
-        client.getEntries({
-            content_type: "subtitle"
-        })
-        .then((response) => {setAbout(response.items[0])})
-        .catch(console.error)
-    },[])
+        fetch('http://localhost:7070/cards/')
+        .then((response) => response.json())
+        .catch(error=> console.error('Error:', error))
+        .then(response => console.log('Success:', JSON.stringify(response)))
+  },[])
 
     console.log(about)
     

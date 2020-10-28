@@ -1,51 +1,51 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams, useHistory } from "react-router-dom";
-import { client } from "./client";
 import marked from 'marked';
+//import renderHTML from "react-render-html";
+
 import './Card.css';
 import MainPageButton from "./MainPageButton";
 
-
 const Card = ({match, history}) => {
   const [recipes,setRecipes] = useState(null);
-  const {params:{recipeName}}= match; // match.param.recipeName destructure
+  const {params:{recipeId}}= match; // match.params.recipeId destructure
+  console.log(recipes);
 
   useEffect(() => {
-        client.getEntries({
-          content_type: "recipes"
-        })
-        .then((response) => {setRecipes(response.items)})
-        .catch(console.error)
+        fetch('http://localhost:7070/cards/')
+        .then((response) => response.json())
+        .catch(error=> console.error('Error:', error))
+        .then(data =>setRecipes(data))
   },[])
-
+console.log(recipeId);
   return (
-    <div className={recipeName?"cardContainerBig":"cardContainer"}>
+    <div className={recipeId?"cardContainerBig":"cardContainer"}>
       {recipes && 
         recipes
         .filter(recipe => 
-          recipeName 
-          ? recipeName === recipe.fields.slug 
+          recipeId 
+          ? parseInt(recipeId,10) === recipe.id 
           : recipe
         )
-        .map((recipe,index)=>{
+        .map((recipe)=>{
           return(
-            <div key={index} className={recipeName?"cardBig": "card"}>
-              <Link to={`/${recipe.fields.slug}`}>
-              <h3 className={recipeName?"cardTitleBig": "cardTitle"}> {recipe.fields.title} </h3>
+            <div key={recipe.id} className={recipeId?"cardBig": "card"}>
+              <Link to={`/cards/${recipe.id}`}>
+              <h3 className={recipeId?"cardTitleBig": "cardTitle"}> {recipe.title} </h3>
               </Link>          
-              <img className={recipeName?"cardImageBig":"cardImage"} src={recipeName ? recipe.fields.bigImage.fields.file.url: recipe.fields.image.fields.file.url} alt={recipe.fields.description}/>
-              <p className={recipeName?"cardDescBig": "cardDesc"}>{recipe.fields.description}</p> 
-              {recipeName? <section className="ingredient"dangerouslySetInnerHTML={{__html:marked(recipe.fields.ingredient)}} /> :""}            
+              <img className={recipeId? "cardImageBig" : "cardImage"} src={`http://localhost:7070/images/${recipe.image}`}/>
+              <p className={recipeId? "cardDescBig": "cardDesc"}>{recipe.description}</p> 
+              {recipeId? <section className="ingredient"dangerouslySetInnerHTML={{__html:marked(recipe.ingredient)}} /> :""}     
+              {recipeId? <section className="direction" dangerouslySetInnerHTML={{__html:marked(recipe.direction)}} /> :""}            
+              {recipeId? <MainPageButton history={history} /> : "" }
             </div>
           )
         })
       }
-      <MainPageButton history={history} />
     </div>
   )
 } 
-
-
 export default Card;
 
-        //style={{backgroundImage: "url("+recipe.fields.image.fields.file.url+")"}}
+
+//              {recipeId? <section className="direction" renderHTML(marked(recipe.direction)) /> :""}  
