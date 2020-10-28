@@ -34,6 +34,7 @@
     border: 2px solid rgb(44, 2, 2);
     border-radius: 20px;
     margin: 0.5em;
+    text-decoration: none;
     
 }
 .cardBig {
@@ -46,12 +47,17 @@
     color: orangered;
     opacity: 90%;
     font-size: 0.8em;
+    text-decoration: none;
+    
 } 
 
 h3 {
     font-family: 'Sansita Swashed', cursive;
     color: orangered;
     opacity: 90%;
+    text-decoration: none;
+
+    
 }
 
 
@@ -61,6 +67,7 @@ h3 {
     opacity: 90%;
     text-decoration: none;
     font-size: 1.2em;  
+
 }
 
 .cardDesc, .cardDescBig, .ingredient {

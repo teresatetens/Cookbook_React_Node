@@ -18,7 +18,7 @@ const App = ()=> {
             <About/>
           <Switch>           
             <Route component ={Card} path='/cards/:recipeId?' />
-            <Route path='/cards'/>
+            <Route path='/home'/>
           </Switch>  
           <Footer />
         </div>
