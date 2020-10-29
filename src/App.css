@@ -16,7 +16,6 @@ body {
   background-color: rgb(170, 226, 170);
   display: flex;
   flex-direction: row;
-  align-items: center;
 }
 
 .logo {
@@ -37,6 +36,8 @@ body {
   width: 100%;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 3em;
 }
 
 .navigationItem {
@@ -67,17 +68,24 @@ body {
   font-family: 'Sansita Swashed', cursive;
 }
 
+/* main section */
+.mainSection {
+  min-height: 1000px;
 
+  background-color: greenyellow;
+}
 
 /* the footer section*/
 .footer {
   width: 100%;
   height: 120px;
+  margin-top: 1em;
   background-color: green;
   opacity: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 2em;
 }
 
 .socialmediaContainer {

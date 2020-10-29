@@ -11,7 +11,6 @@ function Header(){
             <nav className="navigation">
                 <NavLink className="navigationItem"  to="/cards" activeStyle={{color: "white"}}>Home</NavLink>     
                 <NavLink className="navigationItem"  to="/aboutUs" activeStyle={{color: "white"}}>About&nbsp;Us</NavLink> 
-              
             </nav>
             
         </div>

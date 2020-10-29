@@ -30,7 +30,7 @@ console.log(recipeId);
         .map((recipe)=>{
           return(
             <div key={recipe.id} className={recipeId?"cardBig": "card"}>
-              <Link to={`/cards/${recipe.id}`}>
+              <Link to={`/home/${recipe.id}`}>
               <h3 className={recipeId?"cardTitleBig": "cardTitle"}> {recipe.title} </h3>
               </Link>          
               <img className={recipeId? "cardImageBig" : "cardImage"} src={`http://localhost:7070/images/${recipe.image}`}/>
