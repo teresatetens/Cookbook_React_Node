@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams, useHistory } from "react-router-dom";
 import marked from 'marked';
-//import renderHTML from "react-render-html";
+import renderHTML from "react-render-html";
 
 import './Card.css';
 import MainPageButton from "./MainPageButton";
@@ -33,10 +33,10 @@ console.log(recipeId);
               <Link to={`/cards/${recipe.id}`}>
               <h3 className={recipeId?"cardTitleBig": "cardTitle"}> {recipe.title} </h3>
               </Link>          
-              <img className={recipeId? "cardImageBig" : "cardImage"} src={`http://localhost:7070/images/${recipe.image}`}/>
+              <img className={recipeId? "cardImageBig" : "cardImage"} src={recipeId?`http://localhost:7070/images/${recipe.bigimage}`:`http://localhost:7070/images/${recipe.image}` }/>
               <p className={recipeId? "cardDescBig": "cardDesc"}>{recipe.description}</p> 
-              {recipeId? <section className="ingredient"dangerouslySetInnerHTML={{__html:marked(recipe.ingredient)}} /> :""}     
-              {recipeId? <section className="direction" dangerouslySetInnerHTML={{__html:marked(recipe.direction)}} /> :""}            
+              {recipeId? <section className="ingredient"> { renderHTML(marked(recipe.ingredient))}</section>:""}  
+              {recipeId? <section className="direction"> { renderHTML(marked(recipe.direction))} </section>:""}               
               {recipeId? <MainPageButton history={history} /> : "" }
             </div>
           )
@@ -46,6 +46,3 @@ console.log(recipeId);
   )
 } 
 export default Card;
-
-
-//              {recipeId? <section className="direction" renderHTML(marked(recipe.direction)) /> :""}  
