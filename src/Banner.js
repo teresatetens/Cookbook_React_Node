@@ -1,3 +1,4 @@
+import { urlencoded } from "body-parser";
 import React, { useState, useEffect } from "react";
 
 import './App.css'
@@ -12,15 +13,15 @@ const Banner = ()=> {
     fetch('http://localhost:7070/cards/')
     .then((response) => response.json())
     .catch(error=> console.error('Error:', error))
-    .then(response => console.log('Success:', JSON.stringify(response)))
+    .then(data => setBanner(data))
 },[])
-
+    console.log(banner);
     return (
       <>
         {banner && 
-          <div className = "banner" style={{backgroundImage:`url(${banner.fields.image.fields.file.url})`}}>
-             <h1 className = "bannerMessage">{banner.fields.bannerMessage}</h1>
-             <p className = "bannerDescription">{banner.fields.description}</p>
+          <div className = "banner" style={{backgroundImage: "url(http://localhost:7070/images/banner.png)"}}>
+             <h1 className = "bannerMessage">Welcome to Remy's kitchen</h1>
+             <h3 className = "bannerDescription">where veggies are more than just ratatouille..!</h3>
         </div>
         }
       </>

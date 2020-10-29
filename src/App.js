@@ -6,7 +6,7 @@ import Banner from "./Banner";
 import About from "./About";
 import Card from "./Card";
 import Footer from "./Footer"
-import MainPageButton from "./MainPageButton";
+import AboutUs from "./AboutUs"
 
 const App = ()=> {
 
@@ -15,11 +15,11 @@ const App = ()=> {
         <div>
           <Header />
           <Banner />
-            <About/>
           <Switch>           
             <Route component ={Card} path='/cards/:recipeId?' />
+            <Route path='/aboutUs' component={AboutUs} />
             <Route path='/cards'/>
-          </Switch>  
+          </Switch>
           <Footer />
         </div>
         </Router>
